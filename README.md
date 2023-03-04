@@ -13,25 +13,16 @@ URL - https://decentralized-chat-app-phi.vercel.app
 
 Node.js, npm 
 
-## Screenshots
+## Demo
 
-![App Screenshot](https://i.ibb.co/dMrBZrj/Screenshot-2023-03-01-181706.png)
-
-
-![App Screenshot](https://i.ibb.co/PGzBfq9/Screenshot-2023-03-01-182008.png)
-
-![App Screenshot](https://i.ibb.co/XY2bzZ8/Screenshot-2023-03-01-182153.png)
-
-![App Screenshot](https://i.ibb.co/fYMQKgy/Screenshot-2023-03-01-182254.png)
-
-![App Screenshot](https://i.ibb.co/d73z0WP/Screenshot-2023-03-01-182454.png)
+![App Screenshot](https://i.ibb.co/1X30XQj/Recording-2.gif)
 
 ## Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://github.com/phyohan18/Decentralized-Chat-App.git
+  git clone https://github.com/phyohan18/HashMe-NodeJS-CLI-Tool.git
 ```
 
 Run npm install to install everything from package.json
@@ -40,27 +31,44 @@ Run npm install to install everything from package.json
  npm install
 ```
 
-Then to run the development server:
+Then to run the parallel processing version:
 
 ```bash
- npm run dev
+ npm run parallelHash
 ```
-Open http://localhost:5173 and you'll be able to see the page appear.
+For the serial version:
 
-## Features Completed
+```bash
+ npm run serialHash
+```
 
-- **End-to-end encryption**: The system uses the Simple Encryption Algorithm (SEA) provided by Gun.js to encrypt messages, ensuring that only the sender and recipient can access the contents of the message.
-- **Blockchain based Authentication**: Users can sign in using their wallet address as their unique identifier, removing the need for additional personal information and providing a secure and reliable authentication system.
-- **In-app Message Translation Feature**: The system includes an auto-translate feature that supports over 10 languages, allowing users to communicate more easily with others who speak different languages.
-- **Decentralized Architecture**: The system utilizes Gun.js to store user data and message logs on a decentralized network of servers, reducing the risk of data breaches and increasing user privacy.
-- **Offensive & Toxic Message Detection Feature**: The system uses the Perspective API, powered by NLP, to automatically detect and filter out harmful or toxic messages.
-- **Score-based User moderation Feature**: Users who send harmful or toxic messages receive warnings and may eventually be banned from the server, with the severity of the punishment based on their behaviour score.
-- **Group messaging**: The system allows users to create chat rooms with customn images and invite others to join, enabling group communication and collaboration.
-- **Screenshot Protection**: The app disabled Screenshot keyboard shortcut and print keyboard shortcut but may still be able to capture screenshots using device-level or OS-level features such as snipping tools or screen.
-- **In-app Profanity Filter**: The system filters out swear or bad words, replacing them with asterisks to ensure a more positive and respectful user experience.
-- **Customizable User Profile**: Users can upload custom avatars and set nicknames, personalizing their profile and expressing their identity.
-- **Chat Group Search Feature**: The system includes a chat group search feature with a stunning UI, making it easy for users to find and join groups that align with their interests
+You can use the sample data (.txt) file inside sample_data folder.
 
+## Discussion
+
+The chart below gives a clear picture of the execution time gap between processing and parallel processing on various sizes of dummy data.
+
+
+**Performance Comparison using SHA-2 Hash Algorithm**
+
+![App Screenshot](https://i.ibb.co/tCdq3Bw/Picture1.png)
+
+As the size of the data input size is higher, the effectiveness of parallel execution brought by utilizing the Cluster module gains. However, bear in mind that when we apply parallel processing, the CPU utilization may reach 100%, resulting in increased CPU heat. Furthermore, when it comes to parallel processing, workload balancing is critical since it can finish all jobs in parallel in an optimal manner, saving time and speeding up the execution. 
+
+**Performance Comparison using SHA-2 Hash Algorithm**
+
+The figure below compares the program's execution times of hashing 100,000 lines of plain text using SHA-2 hash algorithm for serial and parallel versions on two different hardware configurations.
+
+![App Screenshot](https://i.ibb.co/YbqYGdd/Picture2.png)
+
+The chart shows that hashing a text file with 100,000 lines in System 1 takes over 5 seconds in serial processing, but only 2.4 seconds in parallel processing, which is more than twice as fast. In contrast, serial processing in System 2 took 8.8 seconds while parallel processing took nearly 5 seconds. This difference is due to System 1's clock speed of 3.20 GHz, which is faster than System 2's 2.70 GHz. Additionally, System 1 has four cores, two more than System 2. However, if System 2 had more cores than System 1, its performance might be better.
+
+## Recommendation
+It is important to weigh the pros and cons before choosing between parallel and serial processing. Although parallel processing is faster than serial processing, it requires specialized hardware setup that can be more expensive and challenging to deploy. Moreover, activating multi-core power may increase CPU consumption and generate more heat, potentially leading to system failures if the processor cannot keep up with the workload.
+
+## Closing thoughts
+
+This mini-project has helped me comprehend the characteristics and distinctions between serial and parallel processing, as well as their advantages and disadvantages. I have also learned how large-scale applications can enhance their performance in real-world scenarios by utilizing parallel architecture. As a result, I now understand how to distribute the workload across available cores and recognize that a system with superior hardware configuration can complete tasks more quickly if we leverage its multi-core capabilities.
 
 ## Feedback
 
@@ -70,6 +78,3 @@ If you have any feedback, please reach out to me at phyohan1234@gmail.com
 ## Authors
 
 - [@phyohan18](https://www.github.com/phyohan18)
-
-
-
