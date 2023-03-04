@@ -3,7 +3,7 @@
 
 **Description** : “HashMe” is a command-line software that takes a .txt file as input and outputs a new hashed text file. The application also provides various algorithms from which you can select your preferred hash algorithm. The application reads every lines of the original file, with every input line applying the cryptographic operation to generate individual hashes.
 
-**Two verisons of the program ( Serial & Parallel )**
+**Two versions of the program ( Serial Processing & Parallel Processing )**
 
 This application offers two modes of operation: serial and parallel processing. Node.js typically runs in a single thread, which can result in slow performance when processing large text files. To address this, I implemented the serial processing approach with the help of NodeJS's built-in Cluster module. The module creates child processes that each run on their own thread, based on the number of cores available in the system. The workload is then distributed among these threads by the main thread. This approach optimizes execution time by processing jobs in parallel, making it an efficient tool for handling large amounts of data using multi-core parallel processing.
 
