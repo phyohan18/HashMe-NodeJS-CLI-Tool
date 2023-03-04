@@ -1,0 +1,23 @@
+{
+  "name": "final",
+  "version": "1.0.0",
+  "description": "HashMe is a command-line software that takes a.txt file as input and outputs a new hashed text file. The application also provides a variety of algorithms from which you can select your preferred hash algorithm. The application reads every lines of text within the text file and hashes them using the user-specified algorithm.",
+  "main": "index-s.js",
+  "type": "module",
+  "scripts": {
+    "parallelHash": "node index-p.js",
+    "seqHash": "node index-s.js"
+  },
+  "author": "Phyo Pyae Sone Han",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "clear": "^0.1.0",
+    "cli-progress": "^3.10.0",
+    "crypto-js": "^4.1.1",
+    "figlet": "^1.5.2",
+    "inquirer": "^8.2.0",
+    "log-symbols": "^5.1.0",
+    "pretty-hrtime": "^1.0.3"
+  }
+}
