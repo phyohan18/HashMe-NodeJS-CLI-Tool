@@ -1,12 +1,12 @@
 {
-  "name": "final",
+  "name": "Hash Me",
   "version": "1.0.0",
-  "description": "HashMe is a command-line software that takes a.txt file as input and outputs a new hashed text file. The application also provides a variety of algorithms from which you can select your preferred hash algorithm. The application reads every lines of text within the text file and hashes them using the user-specified algorithm.",
+  "description": "HashMe is a command-line tool that uses secure cryptographic hashing algorithms to generate a hashed text file. It leverages NodeJS's Cluster module to perform parallel processing and optimize performance by dividing the workload among multiple threads based on available cores. Ideal for those seeking an easy and quick way to secure sensitive information.",
   "main": "index-s.js",
   "type": "module",
   "scripts": {
     "parallelHash": "node index-p.js",
-    "seqHash": "node index-s.js"
+    "serialHash": "node index-s.js"
   },
   "author": "Phyo Pyae Sone Han",
   "license": "ISC",
